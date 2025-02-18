@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  *
- * Description: print all singled digits in base 10 
+ * Description: print all singled digits in base 10
  * Return: Always 0 (success)
  */
 int main(void)
