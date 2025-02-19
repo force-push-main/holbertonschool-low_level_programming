@@ -27,7 +27,7 @@ void jack_bauer(void)
 		_putchar(58);
 		_putchar(m);
 		_putchar(mm);
-
+		_putchar('\n');
 		if (mm <= 56)
 		{
 			mm++;
