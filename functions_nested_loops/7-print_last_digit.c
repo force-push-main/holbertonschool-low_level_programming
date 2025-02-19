@@ -10,10 +10,12 @@
 
 int print_last_digit(int r)
 {
+	int numToCheck;
 	int lastNum;
 	int absNum;
 
-	absNum = r * ((r > 0) - (r < 0));
+	numToCheck = r;
+	absNum = numToCheck * ((numToCheck > 0) - (numToCheck < 0));
 	lastNum = absNum % 10;
 	_putchar(lastNum + 48);
 
