@@ -11,8 +11,10 @@
 int print_last_digit(int r)
 {
 	int lastNum;
+	int absNum;
 
-	lastNum = r % 10;
+	absNum = r * ((r > 0) - (r < 0));
+	absNum = r % 10;
 	_putchar(lastNum + 48);
 
 	return (lastNum);
