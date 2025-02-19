@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "main.h"
 
 /**
@@ -22,12 +23,12 @@ void jack_bauer(void)
 
 	for (i = 0; i <= 1440; i++)
 	{
-		_putchar(h);
-		_putchar(hh);
-		_putchar(58);
-		_putchar(m);
-		_putchar(mm);
-		_putchar('\n');
+		putchar(h);
+		putchar(hh);
+		putchar(58);
+		putchar(m);
+		putchar(mm);
+		putchar('\n');
 		if (mm <= 56)
 		{
 			mm++;
@@ -45,6 +46,10 @@ void jack_bauer(void)
 				{
 					hh = 48;
 					h++;
+					if (h >= 51)
+					{
+						return (0);
+					}
 				}
 			}
 		}
