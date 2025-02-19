@@ -21,14 +21,14 @@ void jack_bauer(void)
 	m = 48;
 	mm = 48;
 
-	for (i = 0; i <= 1440; i++)
+	for (i = 0; i <= 1439; i++)
 	{
-		putchar(h);
-		putchar(hh);
-		putchar(58);
-		putchar(m);
-		putchar(mm);
-		putchar('\n');
+		_putchar(h);
+		_putchar(hh);
+		_putchar(58);
+		_putchar(m);
+		_putchar(mm);
+		_putchar('\n');
 		if (mm <= 56)
 		{
 			mm++;
@@ -46,10 +46,6 @@ void jack_bauer(void)
 				{
 					hh = 48;
 					h++;
-					if (h >= 51)
-					{
-						return;
-					}
 				}
 			}
 		}
