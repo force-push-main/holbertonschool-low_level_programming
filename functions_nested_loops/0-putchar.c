@@ -8,10 +8,8 @@
  */
 int main(void)
 {
-	char text[9];
+	char text[9] = "_putchar\n";
 	int i;
-	
-	text = "_putchar\n";
 
 	for(i=0; i<0; i++)
 	{
