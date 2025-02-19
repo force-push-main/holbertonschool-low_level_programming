@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * main - Entry point
+ * print_alphabet - Entry point
  *
- * Description: prints alphabet and new line 
- * Return: Always 0 (success)
+ * Description: prints alphabet and new line
+ * Return: always returns void
  */
 
 void print_alphabet(void)
