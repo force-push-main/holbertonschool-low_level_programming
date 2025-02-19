@@ -48,7 +48,7 @@ void jack_bauer(void)
 					h++;
 					if (h >= 51)
 					{
-						return (0);
+						return;
 					}
 				}
 			}
