@@ -37,7 +37,7 @@ void jack_bauer(void)
 			mm = 48;
 			m++;
 
-			if (m >= 55)
+			if (m >= 54)
 			{
 				m = 48;
 				hh++;
