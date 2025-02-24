@@ -3,7 +3,8 @@
 /**
  * print_line - Entry point
  *
- * Description: prints alphabet and new line
+ * Description: prints underscores n times
+ * @n: number of times to print underscore
  * Return: always returns void
  */
 
