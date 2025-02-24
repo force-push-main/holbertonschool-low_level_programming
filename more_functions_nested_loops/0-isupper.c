@@ -1,10 +1,11 @@
 #include "main.h"
 
 /**
- * print_alphabet - Entry point
+ * _isupper - Entry point
  *
- * Description: prints alphabet and new line
- * Return: always returns void
+ * Description: checks if c is uppercase
+ * @c: the letter to be checked
+ * Return: returns 1 if upper, 0 if lower
  */
 
 int _isupper(int c)
