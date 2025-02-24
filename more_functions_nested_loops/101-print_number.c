@@ -28,5 +28,4 @@ void print_number(int n)
 		j /= 10;
 	}
 	_putchar(48 + (n % 10));
-	_putchar('\n');
 }
