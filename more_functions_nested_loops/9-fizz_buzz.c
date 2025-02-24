@@ -33,6 +33,7 @@ int main (void)
 		{
 			putchar(i + 48);
 		}
+		i++;
 	}
 
 	return (0);
