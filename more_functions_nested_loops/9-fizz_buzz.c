@@ -7,9 +7,10 @@
  * Return: always returns void
  */
 
-int main (void)
+int main(void)
 {
 	int i;
+
 	i = 1;
 
 	while (i <= 100)
@@ -31,10 +32,19 @@ int main (void)
 		}
 		else
 		{
-			putchar(i + 48);
+			printf("%d", i);
+		}
+
+		if (i == 100)
+		{
+			putchar('\n');
+		}
+		else
+		{
+			putchar(' ');
 		}
 		i++;
 	}
 
-	return (0);
+	return (1);
 }
