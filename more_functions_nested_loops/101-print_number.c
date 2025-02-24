@@ -25,7 +25,7 @@ void print_number(int n)
 	{
 		k = n / j;
 		_putchar(48 + (k % 10));
-		j / 10;
+		j /= 10;
 	}
 	_putchar(48 + (n % 10));
 	_putchar('\n');
