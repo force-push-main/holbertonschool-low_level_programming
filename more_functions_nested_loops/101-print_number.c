@@ -29,13 +29,14 @@ void print_number(int n)
 	while (j >= 1)
 	{
 		k = n / j;
+		k = k % 10;
 
 		if (k < 0)
 		{
 			k *= -1;
 		}
 
-		_putchar(48 + (k % 10));
+		_putchar(48 + k);
 		j /= 10;
 	}
 }
