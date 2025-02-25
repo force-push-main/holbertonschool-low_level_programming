@@ -10,5 +10,16 @@
 
 void print_rev(char *s)
 {
+	char start = s;
 
+	while (*s)
+	{
+		s++;
+	}
+
+	while (s != start)
+	{
+		_putchar(*s);
+		s--;
+	}
 }
