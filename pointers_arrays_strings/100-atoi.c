@@ -27,7 +27,7 @@ int _atoi(char *s)
 		if (res)
 			res = (res * 10) + (*s - '0');
 		else
-			res = (*s * sign) - '0';
+			res = (*s - '0') * sign;
 		s++;
 	}
 
