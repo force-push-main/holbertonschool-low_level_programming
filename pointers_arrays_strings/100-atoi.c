@@ -26,11 +26,11 @@ int _atoi(char *s)
 	while (*s && (*s >= '0' && *s <= '9'))
 	{
 		if (res)
-			res = (res * 10) + (*s - '0');
+			res = (res * 10) + ((*s - '0') * sign);
 		else
-			res = *s - '0';
+			res = (*s - '0') * sign;
 		s++;
 	}
 
-	return (res * sign);
+	return (res);
 }
