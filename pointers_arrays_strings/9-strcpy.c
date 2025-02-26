@@ -11,28 +11,18 @@
 
 char *_strcpy(char *dest, char *src)
 {
-	int len, i;
+	char *start = dest;
 
-	len = 0;
-	i = 0;
-
-	while (src[len])
+	while (*src)
 	{
-		len++;
-	}
-
-	while (i <= len)
-	{
-		*dest = src[i];
+		*dest = *src;
 		dest++;
-		i++;
+		src++;
 	}
 
-	while (i > 0)
-	{
-		dest--;
-		i--;
-	}
+	*dest = *src;
+
+	dest = start;
 
 	return (dest);
 }
