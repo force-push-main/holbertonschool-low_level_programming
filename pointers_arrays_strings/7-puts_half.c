@@ -19,9 +19,9 @@ void puts_half(char *str)
 		i++;
 	}
 
-	if ((i - 1) % 2 == 0)
+	if (i % 2 == 0)
 	{
-		n = (i + 1) / 2;
+		n = i / 2;
 
 		while (str[n])
 		{
@@ -30,9 +30,9 @@ void puts_half(char *str)
 		}
 	}
 
-	else if ((i - 1) % 2 == 1)
+	else if (i % 2 == 1)
 	{
-		n = i / 2;
+		n = (i + 1) / 2;
 
 		while (str[n])
 		{
