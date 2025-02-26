@@ -32,7 +32,7 @@ int _atoi(char *s)
 		{
 			if (res)
 			{
-				res = (res * 10) + *s - '0';
+				res = (res * 10) + (*s - '0');
 			}
 			else
 			{
