@@ -12,7 +12,7 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	char *start = dest;
 	int i;
-	
+
 	i = 1;
 
 	while (i <= n && *dest)
@@ -22,12 +22,12 @@ char *_strncpy(char *dest, char *src, int n)
 			*dest = *src;
 			src++;
 		}
-		else 
+		else
 			*dest = '\0';
 		dest++;
 		i++;
 	}
-	
+
 	dest = start;
 
 	return (dest);
