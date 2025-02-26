@@ -41,7 +41,7 @@ int _atoi(char *s)
 			}
 			else
 			{
-				res = *s;
+				res = *s - '0';
 			}
 		}
 		s++;
