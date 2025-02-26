@@ -21,12 +21,12 @@ int _atoi(char *s)
 	{
 		if (*s == '-' && sign > 0)
 		{
-			-sign;
+			sign *= -1;
 		}
 
 		if (*s == '+' && sign < 0)
 		{
-			-sign;
+			sign *- -1;
 		}
 		s++;
 	}
