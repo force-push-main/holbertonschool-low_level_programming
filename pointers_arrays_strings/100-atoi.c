@@ -12,38 +12,24 @@ int _atoi(char *s)
 {
 	int res, sign;
 
-	char *start = s;
-
 	res = 0;
 	sign = 1;
 
-	while (*s && !res)
+	while (*s && (*s < '0' && *s > '9'))
 	{
 		if (*s == '-')
-		{
 			sign *= -1;
-		}
 		s++;
 	}
-	s = start;
-	while (*s)
+	
+	while (*s && (*s >= '0' && *s <= '9'))
 	{
-		if ((*s < '0' && *s > '0') && res)
-		{
-			break;
-		}
-		if (*s >= '0' && *s <= '9')
-		{
-			if (res)
-			{
-				res = (res * 10) + (*s - '0');
-			}
-			else
-			{
-				res = *s - '0';
-			}
-		}
+		if (res)
+			res = (res * 10) + (*s - '0');
+		else
+			res = (*s * sign) - '0';
 		s++;
 	}
-	return (res * sign);
+
+	return (res);
 }
