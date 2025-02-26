@@ -28,6 +28,10 @@ int _atoi(char *s)
 	s = start;
 	while (*s)
 	{
+		if ((*s < '0' && *s > '0') && res)
+		{
+			break;
+		}
 		if (*s >= '0' && *s <= '9')
 		{
 			if (res)
