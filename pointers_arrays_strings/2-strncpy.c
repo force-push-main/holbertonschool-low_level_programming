@@ -7,3 +7,28 @@
  * @n: number of bytes to be copied
  * Return: void
  */
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	char *start = dest;
+	int i;
+	
+	i = 1;
+
+	while (i <= n && *dest)
+	{
+		if (*src)
+		{
+			*dest = *src;
+			src++;
+		}
+		else 
+			*dest = '\0';
+		dest++;
+		i++;
+	}
+	
+	dest = start;
+
+	return (dest);
+}
