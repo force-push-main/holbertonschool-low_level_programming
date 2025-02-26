@@ -19,12 +19,7 @@ int _atoi(char *s)
 
 	while (*s && !res)
 	{
-		if (*s == '-' && sign > 0)
-		{
-			sign *= -1;
-		}
-
-		if (*s == '+' && sign < 0)
+		if (*s == '-')
 		{
 			sign *= -1;
 		}
