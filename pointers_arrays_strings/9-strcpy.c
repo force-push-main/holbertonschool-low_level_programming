@@ -28,7 +28,7 @@ char *_strcpy(char *dest, char *src)
 		i++;
 	}
 
-	while (i >= 0)
+	while (i > 0)
 	{
 		dest--;
 		i--;
