@@ -10,7 +10,7 @@ char *cap_string(char *str)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 
 	if (str[0] >= 'a' && str[0] <= 'z')
 	{
@@ -21,9 +21,10 @@ char *cap_string(char *str)
 	{
 		if (str[i] < 'A' || str[i] > 'z')
 		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+			i++;
+			if (str[i] >= 'a' && str[i] <= 'z')
 			{
-				str[i + 1] = str[i + 1] - 32;
+				str[i] = str[i] - 32;
 			}
 		}
 
