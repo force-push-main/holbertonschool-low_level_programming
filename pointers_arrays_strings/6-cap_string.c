@@ -19,12 +19,11 @@ char *cap_string(char *str)
 
 	while (str[i])
 	{
-		if (str[i] < 'A' || str[i] > 'z')
+		if (str[i] < 65 || str[i] > 122)
 		{
-			i++;
-			if (str[i] >= 'a' && str[i] <= 'z')
+			if ((str[i + 1] >= 'a' && str[i + 1] <= 'z') && str[i] != '6')
 			{
-				str[i] = str[i] - 32;
+				str[i + 1] = str[i + 1] - 32;
 			}
 		}
 
