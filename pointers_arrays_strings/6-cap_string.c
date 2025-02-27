@@ -21,7 +21,7 @@ char *cap_string(char *str)
 	{
 		if (str[i] < 65 || str[i] > 122)
 		{
-			if (str[i + 1] >= 'a' && str[i + 1] <= 'z') 
+			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
 			{
 				if (str[i] != '6' && str[i] != '-')
 				str[i + 1] = str[i + 1] - 32;
