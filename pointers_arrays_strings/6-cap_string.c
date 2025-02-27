@@ -12,9 +12,9 @@ char *cap_string(char *str)
 
 	i = 0;
 
-	if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+	if (str[0] >= 'a' && str[0] <= 'z')
 	{
-		str[i + 1] = str[i + 1] - 32;
+		str[0] = str[0] - 32;
 	}
 
 	while (str[i])
