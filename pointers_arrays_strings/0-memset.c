@@ -1,5 +1,5 @@
 /**
- * memset - Entry point
+ * _memset - Entry point
  *
  * Description: stored char b n number of times in s
  * @s: address for b to be stored
