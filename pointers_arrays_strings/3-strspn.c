@@ -30,7 +30,7 @@ unsigned int _strspn(char *s, char *accept)
 				i++;
 			}
 
-			if(is_accept == 1)
+			if (is_accept == 1)
 				count_ln++;
 
 			word_ln++;
@@ -41,7 +41,7 @@ unsigned int _strspn(char *s, char *accept)
 
 		if (word_ln == count_ln && count_ln != 0)
 			res += word_ln;
-		
+
 		word_ln = 0;
 		count_ln = 0;
 
