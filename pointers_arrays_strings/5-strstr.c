@@ -19,14 +19,13 @@ char *_strstr(char *haystack, char *needle)
 		while (needle[i])
 		{
 			if (haystack[i] == needle[i])
-				is_found = 1;
-			else
-				is_found = 0;
+				is_found++;
 			i++;
 		}
-		if (is_found)
+		if (is_found == i)
 			return (haystack);
 		i = 0;
+		is_found = 0;
 		haystack++;
 	}
 
