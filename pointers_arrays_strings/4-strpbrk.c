@@ -1,5 +1,5 @@
 /**
- * __strpbrk - Entry point
+ * _strpbrk - Entry point
  *
  * Description: returns pointer for first occurance of char in string
  * @s: string to be searched
@@ -17,7 +17,7 @@ char *_strpbrk(char *s, char *accept)
 	{
 		while (accept[i])
 		{
-			if(*s == accept[i])
+			if (*s == accept[i])
 				return (s);
 		i++;
 		}
