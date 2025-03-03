@@ -19,7 +19,7 @@ unsigned int _strspn(char *s, char *accept)
 	count_ln = 0;
 	word_ln = 0;
 
-	while (*s)
+	while (*s && !res)
 	{
 		while ((*s >= 'a' && *s <= 'z') || (*s >= 'A' && *s <= 'Z'))
 		{
