@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <string.h>
 
 /**
  * _strdup - Entry point
@@ -12,18 +11,24 @@
 char *_strdup(char *str)
 {
 
-	long unsigned int i;
+	int i, len;
 	char *ptr;
 
 	if (!str)
 		return (0);
 
-	ptr = malloc(sizeof(str) * strlen(str));
+	while (str[i])
+	{
+		i++;
+		len++;
+	}
+
+	ptr = malloc(sizeof(*str) * len);
 
 	if (!ptr)
 		return (0);
 
-	for (i = 0; i < strlen(str); i++)
+	for (i = 0; i < len; i++)
 		ptr[i] = str[i];
 
 	return (ptr);
