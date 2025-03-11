@@ -17,6 +17,12 @@ char *str_concat(char *s1, char *s2)
 	i = 0;
 	j = 0;
 
+	if (!s1[i])
+		s1[i] = "";
+
+	if (!s2[j])
+		s2[j] = "";
+
 	while (s1[i])
 		i++;
 
