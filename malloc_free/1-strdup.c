@@ -24,12 +24,12 @@ char *_strdup(char *str)
 		len++;
 	}
 
-	ptr = malloc(sizeof(*str) * (len + 1));
+	ptr = malloc(sizeof(char) * (len + 1));
 
 	if (!ptr)
 		return (0);
 
-	for (i = 0; i < len; i++)
+	for (i = 0; i <= len; i++)
 		ptr[i] = str[i];
 
 	return (ptr);
