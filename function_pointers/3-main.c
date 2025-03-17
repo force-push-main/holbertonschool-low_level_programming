@@ -5,6 +5,8 @@
 
 /**
  * main - entry point
+ * @argc: number of args
+ * @argv: array of arg strings
  *
  * Return: Always 0.
  */
@@ -15,7 +17,7 @@ int main(int argc, char *argv[])
 
 	int (*fetched_func)(int, int);
 
-	if (argc < 3 || !argv[1] || !argv[2] || !argv[3] || strlen(argv[2]) > 1)
+	if (argc < 3 || !argv[1] || !argv[2] || !argv[3])
 	{
 		printf("Error\n");
 		exit(98);
@@ -32,7 +34,7 @@ int main(int argc, char *argv[])
 
 	fetched_func = get_op_func(argv[2]);
 
-	if (!fetched_func)
+	if (!fetched_func || strlen(argv[2]) > 1)
 	{
 		printf("Error\n");
 		exit(99);
