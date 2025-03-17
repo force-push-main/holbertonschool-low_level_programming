@@ -23,10 +23,10 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if ((*argv[2] == '/' || *argv[2] == '%') && *argv[3] == '0')
+	if (strlen(argv[2]) > 1)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 
 	a = atoi(argv[1]);
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 
 	fetched_func = get_op_func(argv[2]);
 
-	if (!fetched_func || strlen(argv[2]) > 1)
+	if (!fetched_func)
 	{
 		printf("Error\n");
 		exit(99);
