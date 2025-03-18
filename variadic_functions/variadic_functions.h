@@ -1,3 +1,5 @@
+#include <stdarg.h>
+
 #ifndef VARIADIC_FUNCTIONS_H
 #define VARIADIC_FUNCTIONS_H
 int sum_them_all(const unsigned int n, ...);
@@ -15,8 +17,7 @@ void print_all(const char * const format, ...);
 typedef struct 
 {
 	char char_type;
-	char *syntax;
-	char *type_declaration;
+	void (*func)(va_list arg);
 } Print_Types;
 
 #endif

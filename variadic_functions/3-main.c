@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    print_all("fff", 2.5, 1.1, 3.4);
+    print_all("cecc", 'a', 'b', 'c');
     return (0);
 }
