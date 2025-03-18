@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    print_all("cecc", 'a', 'b', 'c');
+    print_all("sss", "god", "help", "me");
     return (0);
 }

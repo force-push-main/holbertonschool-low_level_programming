@@ -24,7 +24,7 @@ void print_string(va_list arg)
 	if (!s)
 		s = "(nil)";
 
-	printf("%s", va_arg(arg, char *));
+	printf("%s", s);
 }
 
 /**
@@ -55,11 +55,12 @@ void print_all(const char * const format, ...)
 	{
 		j = 0;
 
-		while (j < 3)
+		while (j < 4)
 		{
 			if (format[i] == print_t[j].char_type)
 			{
 				print_t[j].func(args);
+				printf(", ");
 			}
 			j++;
 		}
