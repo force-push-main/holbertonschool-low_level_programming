@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-    print_all("sss", "god", "help", "me");
+    print_all("ssks", "god", "help", "me");
     return (0);
 }

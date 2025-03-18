@@ -45,14 +45,20 @@ void print_all(const char * const format, ...)
 	};
 
 	int i, j;
+
+	char *k;
+
 	va_list args;
 
 	va_start(args, format);
 
 	i = 0;
+	k = "";
 	
 	while (format[i])
 	{
+		printf("%s", k);
+		k = "";
 		j = 0;
 
 		while (j < 4)
@@ -60,8 +66,7 @@ void print_all(const char * const format, ...)
 			if (format[i] == print_t[j].char_type)
 			{
 				print_t[j].func(args);
-				if (format[i + 1])
-					printf(", ");
+				k = ", ";
 			}
 			j++;
 		}
