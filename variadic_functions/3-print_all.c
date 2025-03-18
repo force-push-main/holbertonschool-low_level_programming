@@ -3,24 +3,57 @@
 #include "variadic_functions.h"
 
 
+/**
+ * print_char - entry point
+ *
+ * Description: prints char
+ * @arg: arg to be printed
+ * Return: always returns void
+ */
+
 void print_char(va_list arg)
 {
 	printf("%c", va_arg(arg, int));
 }
+
+/**
+ * print_int - entry point
+ *
+ * Description: prints int
+ * @arg: arg to be printed
+ * Return: always returns void
+ */
 
 void print_int(va_list arg)
 {
 	printf("%d", va_arg(arg, int));
 }
 
+/**
+ * print_float - entry point
+ *
+ * Description: prints float
+ * @arg: arg to be printed
+ * Return: always returns void
+ */
+
 void print_float(va_list arg)
 {
 	printf("%f", va_arg(arg, double));
 }
 
+/**
+ * print_string - entry point
+ *
+ * Description: prints string
+ * @arg: arg to be printed
+ * Return: always returns void
+ */
+
 void print_string(va_list arg)
 {
 	char *s = va_arg(arg, char *);
+
 	if (!s)
 		s = "(nil)";
 
@@ -46,19 +79,19 @@ void print_all(const char * const format, ...)
 
 	int i, j;
 
-	char *k;
+	char *separator;
 
 	va_list args;
 
 	va_start(args, format);
 
+	separator = "";
 	i = 0;
-	k = "";
-	
-	while (format[i])
+
+	while (format && format[i])
 	{
-		printf("%s", k);
-		k = "";
+		printf("%s", separator);
+		separator = "";
 		j = 0;
 
 		while (j < 4)
@@ -66,7 +99,7 @@ void print_all(const char * const format, ...)
 			if (format[i] == print_t[j].char_type)
 			{
 				print_t[j].func(args);
-				k = ", ";
+				separator = ", ";
 			}
 			j++;
 		}

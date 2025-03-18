@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "variadic_functions.h"
 
 /**
@@ -8,5 +9,7 @@
 int main(void)
 {
     print_all("ssks", "god", "help", "me");
+    
+    print_all(NULL);
     return (0);
 }
