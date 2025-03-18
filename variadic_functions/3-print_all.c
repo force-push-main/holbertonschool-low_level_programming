@@ -60,7 +60,8 @@ void print_all(const char * const format, ...)
 			if (format[i] == print_t[j].char_type)
 			{
 				print_t[j].func(args);
-				printf(", ");
+				if (format[i + 1])
+					printf(", ");
 			}
 			j++;
 		}
