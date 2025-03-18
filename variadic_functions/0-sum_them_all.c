@@ -5,7 +5,6 @@
  *
  * Description: sums all passed ints
  * @n: number of ints to sum
- * @b: second int
  * Return: result
  */
 
