@@ -15,8 +15,10 @@ int _strlen(char *string)
 {
 	int i;
 
-	for (i = 0; string[i]; i++)
-		;
+	i = 0;
+
+	while (string[i])
+		i++;
 
 	return (i);
 
@@ -37,7 +39,7 @@ int contains_digits(char *string, int len)
 {
 	int i;
 
-	for (i = 0; i < len; i++)
+	for (i = len - 1; i >= 0; i--)
 	{
 		if (string[i] > '9' || string[i] < '0')
 			return (0);
@@ -47,6 +49,41 @@ int contains_digits(char *string, int len)
 
 }
 
+
+/**
+ * check_leading_zeroes - Entry point
+ *
+ * Description: checks if string only contains zeros
+ * @string: string to be checked
+ * @len: length of string
+ * Return: 1 if not only zeros, 0 if zeros
+ */
+
+int check_leading_zeroes(char *string, int len)
+{
+	int i;
+
+	for (i = 0; i < len; i++)
+	{
+		if (string[i] != '0')
+			return (i);
+	}
+
+	return (i);
+}
+
+int find_true_len(int s1_len, int s1_true_start)
+{
+	int true_len;
+
+	if (s1_len == s1_true_start)
+		true_len = 1;
+
+	if (s1_len < s1_true_start)
+		true_len = s1_len - s1_true_start;
+
+	return (true_len);
+}
 
 /**
  * string_to_array - Entry point
@@ -160,8 +197,8 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	s1_len = _strlen(argv[1]);
-	s2_len = _strlen(argv[2]);
+	s1_len = find_true_len(_strlen(argv[1]), check_leading_zeroes(argv[1], _strlen(argv[1])));
+	s2_len = find_true_len(_strlen(argv[2]), check_leading_zeroes(argv[2], _strlen(argv[2])));
 
 	if (!contains_digits(argv[1], s1_len) || !contains_digits(argv[2], s2_len))
 	{
@@ -169,9 +206,10 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	num1 = malloc(sizeof(int) * s1_len);
+
+	num1 = malloc(sizeof(int) * s2_len);
 	num2 = malloc(sizeof(int) * s2_len);
-	ans = calloc(s1_len + s2_len - 2, sizeof(int));
+	ans = calloc(s1_len + s2_len, sizeof(int));
 
 	if (!num1 || !num2 || !ans)
 	{
@@ -181,10 +219,10 @@ int main(int argc, char *argv[])
 
 	string_to_array(num1, argv[1], s1_len);
 	string_to_array(num2, argv[2], s2_len);
-
+	
 	multiply_nums(num1, s1_len, num2, s2_len, ans);
 
-	print_ans(ans, s1_len + s2_len - 2);
+	print_ans(ans, s1_len + s2_len - 1);
 
 	free(num1);
 	free(num2);
