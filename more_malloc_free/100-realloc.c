@@ -36,6 +36,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (0);
 	}
 
+	if (!ptr)
+		return (new_ptr);
+
 	old_ptr_char = ptr;
 	new_ptr_char = new_ptr;
 
