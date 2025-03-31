@@ -13,7 +13,7 @@ size_t print_list(const list_t *h)
 {
 	char *to_print;
 	const list_t *curr;
-	unsigned len, count;
+	unsigned int len, count;
 
 	curr = h;
 	count = 0;
