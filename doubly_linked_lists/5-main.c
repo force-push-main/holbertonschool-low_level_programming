@@ -23,7 +23,9 @@ int main(void)
     add_dnodeint_end(&head, 402);
     add_dnodeint_end(&head, 1024);
     print_dlistint(head);
-    node = get_dnodeint_at_index(head, 5);
+    node = get_dnodeint_at_index(head, 8);
+    if (!node)
+	    printf("is null\n");
     printf("%d\n", node->n);
     free_dlistint(head);
     head = NULL;
