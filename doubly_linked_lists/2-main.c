@@ -11,6 +11,7 @@
 int main(void)
 {
     dlistint_t *head;
+    size_t n;
 
     head = NULL;
     add_dnodeint(&head, 0);
@@ -21,6 +22,7 @@ int main(void)
     add_dnodeint(&head, 98);
     add_dnodeint(&head, 402);
     add_dnodeint(&head, 1024);
-    print_dlistint(head);
+        n = print_dlistint(head);
+    printf("-> %lu elements\n", n);
     return (EXIT_SUCCESS);
 }
