@@ -3,6 +3,18 @@
 #include <stdio.h>
 #include "lists.h"
 
+
+void backwards(dlistint_t *h)
+{
+	while (h->next)
+		h = h->next;
+	while (h)
+	{
+		printf("%i\n", h->n);
+		h = h->prev;
+	}
+}
+
 /**
  * main - check the code
  *
@@ -25,8 +37,10 @@ int main(void)
     */
     print_dlistint(head);
     printf("-----------------\n");
-    insert_dnodeint_at_index(&head, 2, 4096);
+    insert_dnodeint_at_index(&head, 0, 4096);
     print_dlistint(head);
+    printf("-----------------\n");
+    backwards(head);
     free_dlistint(head);
     head = NULL;
     return (EXIT_SUCCESS);
