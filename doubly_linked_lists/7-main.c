@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include "lists.h"
 
-
 void backwards(dlistint_t *h)
 {
 	while (h->next)
@@ -27,17 +26,15 @@ int main(void)
     head = NULL;
     add_dnodeint_end(&head, 0);
     add_dnodeint_end(&head, 1);
-    /*
     add_dnodeint_end(&head, 2);
     add_dnodeint_end(&head, 3);
     add_dnodeint_end(&head, 4);
     add_dnodeint_end(&head, 98);
     add_dnodeint_end(&head, 402);
     add_dnodeint_end(&head, 1024);
-    */
     print_dlistint(head);
     printf("-----------------\n");
-    insert_dnodeint_at_index(&head, 0, 4096);
+    insert_dnodeint_at_index(&head, 4, 4096);
     print_dlistint(head);
     printf("-----------------\n");
     backwards(head);
