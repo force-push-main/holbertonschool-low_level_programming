@@ -21,7 +21,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	flipper = 1;
 
-	flipper <<= index;
+	flipper <<= (index + 1);
 
 	*n ^= flipper;
 
