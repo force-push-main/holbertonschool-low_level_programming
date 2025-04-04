@@ -13,13 +13,15 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd, w, i;
 
-	fd = open(filename, (O_RDWR & O_RDONLY) | O_APPEND);
+	if (!filename)
+		return (-1);
 
 	i = 0;
 
 	while (text_content && text_content[i])
 		i++;
 
+	fd = open(filename, O_WRONLY | O_APPEND);
 	w = write(fd, text_content, i);
 
 	if (w == -1 || fd == -1)
