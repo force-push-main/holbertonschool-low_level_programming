@@ -59,6 +59,7 @@ int main(int argc, char **argv)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
+		fd_to = open(argv[2], O_WRONLY | O_APPEND);
 	}
 
 	close_file(fd_to);
