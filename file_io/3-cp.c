@@ -70,7 +70,7 @@ void copy_file(char *from, char *to, int fd_from, int fd_to)
 
 int main(int argc, char **argv)
 {
-	int fd_to, fd_from;
+	int fd_to, fd_from, i;
 
 	if (argc != 3)
 	{
@@ -86,6 +86,10 @@ int main(int argc, char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
+
+	while (i < 100)
+		i++;
+
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
