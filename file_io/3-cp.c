@@ -38,7 +38,7 @@ void copy_file(char *from, char *to, int fd_from, int fd_to)
 
 	if (r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file in cp %s\n", from);
 		exit(98);
 	}
 
@@ -88,7 +88,7 @@ int main(int argc, char **argv)
 	}
 	if (fd_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to in main %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 
