@@ -22,6 +22,44 @@ void close_file(int fd)
 }
 
 /**
+ * copy_file - Entry point
+ *
+ * Description: close files
+ * @fd: file to close
+ * Return: void
+ */
+
+void copy_file(char *from, char *to, int fd_from, int fd_to)
+{
+	int r, w;
+	char buffer[1024];
+
+	r = read(fd_from, &buffer, 1024);
+
+	if (r == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
+		exit(98);
+	}
+
+	while (r > 0)
+	{
+		w = write(fd_to, &buffer, r);
+		if (w == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
+			exit(99);
+		}
+		r = read(fd_from, &buffer, 1024);
+		if (r == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
+			exit(98);
+		}
+	}
+}
+
+/**
  * main - Entry point
  *
  * Description: copies content of file to new file
@@ -32,8 +70,7 @@ void close_file(int fd)
 
 int main(int argc, char **argv)
 {
-	int fd_to, fd_from, w, r;
-	char buffer[1024];
+	int fd_to, fd_from;
 
 	if (argc != 3)
 	{
@@ -55,22 +92,7 @@ int main(int argc, char **argv)
 		exit(99);
 	}
 
-	while ((r = read(fd_from, &buffer, 1024)) > 0)
-	{
-		if (r == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			exit(98);
-		}
-
-		w = write(fd_to, &buffer, r);
-
-		if (w == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(99);
-		}
-	}
+	copy_file(argv[1], argv[2], fd_from, fd_to);
 
 	close_file(fd_to);
 	close_file(fd_from);
