@@ -27,11 +27,17 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		read_return_value = read(fd, &c, 1);
 		if (read_return_value == 0)
-			return (0);
+		{
+			close(fd);
+			return (i);
+		}
 
 		write_return_value = write(STDOUT_FILENO, &c, 1);
 		if (write_return_value == -1)
+		{
+			close(fd);
 			return (0);
+		}
 	}
 
 	close(fd);
