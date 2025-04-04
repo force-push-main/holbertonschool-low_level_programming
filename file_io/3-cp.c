@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * _cp - Entry point
+ * close_file - Entry point
  *
- * Description: copies content of file to new file
- * @from: file to copy from
- * @to: file to copy to
+ * Description: close files
+ * @fd: file to close
  * Return: void
  */
 
@@ -47,13 +46,14 @@ int main(int argc, char **argv)
 
 	while ((r = read(fd_from, buffer, 1024)) > 0)
 	{
-		w = write(fd_to, buffer, r);
-
 		if (fd_from == -1 || r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
+
+		w = write(fd_to, buffer, r);
+
 		if (fd_to == -1 || w == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
