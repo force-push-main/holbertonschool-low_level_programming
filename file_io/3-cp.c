@@ -38,7 +38,7 @@ void copy_file(char *from, char *to, int fd_from, int fd_to)
 
 	if (r == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file in cp %s\n", from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
 		exit(98);
 	}
 
@@ -47,7 +47,7 @@ void copy_file(char *from, char *to, int fd_from, int fd_to)
 		w = write(fd_to, &buffer, r);
 		if (w == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
+			dprintf(STDERR_FILENO, "Error: Can't write to in cp %s\n", to);
 			exit(99);
 		}
 		r = read(fd_from, &buffer, 1024);
