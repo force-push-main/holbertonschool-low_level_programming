@@ -19,12 +19,12 @@ void _cp(char *from, char *to)
 
 	while ((r = read(fd_from, &buffer, 1024)) > 0)
 		w = write(fd_to, buffer, r);
-	if (fd_from < 0 || r < 0)
+	if (fd_from == -1 || r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
 		exit(98);
 	}
-	if (fd_to < 0 || w < 0)
+	if (fd_to == -1 || w == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
 		exit(99);
@@ -33,13 +33,13 @@ void _cp(char *from, char *to)
 	c_to = close(fd_to);
 	c_from = close(fd_from);
 
-	if (c_from < 0)
+	if (c_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 
-	if (c_to < 0)
+	if (c_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
