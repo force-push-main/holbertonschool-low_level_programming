@@ -17,17 +17,20 @@ void _cp(char *from, char *to)
 	fd_from = open(from, O_RDWR);
 	fd_to = open(to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	while ((r = read(fd_from, &buffer, 1024)) > 0)
+	while ((r = read(fd_from, buffer, 1024)) > 0)
+	{
 		w = write(fd_to, buffer, r);
-	if (fd_from == -1 || r == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
-		exit(98);
-	}
-	if (fd_to == -1 || w == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
-		exit(99);
+
+		if (fd_from == -1 || r == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", from);
+			exit(98);
+		}
+		if (fd_to == -1 || w == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
+			exit(99);
+		}
 	}
 
 	c_to = close(fd_to);
