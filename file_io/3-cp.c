@@ -25,7 +25,8 @@ void close_file(int fd)
  * copy_file - Entry point
  *
  * Description: close files
- * @fd: file to close
+ * @from: file to copy from
+ * @to: file to copy to
  * Return: void
  */
 
